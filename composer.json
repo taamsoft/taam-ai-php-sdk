@@ -1,0 +1,54 @@
+{
+    "name": "taam-soft-llc/taam-ai-sdk",
+    "description": "TAAM AI",
+    "type": "library",
+    "keywords": [],
+    "homepage": "https://taamsoft.com/",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "TAMEEM HEZAM",
+            "email": "tamem20142016@gmail.com"
+        }
+    ],
+    "support": {
+        "email": "tamem20142016@gmail.com"
+    },
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "ext-json": "*",
+        "apimatic/unirest-php": "^4.0.0",
+        "apimatic/core-interfaces": "~0.1.0",
+        "apimatic/core": "~0.3.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5",
+        "phan/phan": "5.4.2",
+        "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "TaamAiUserLib\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TaamAiUserLib\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html=coverage",
+        "lint-src": "phpcs --standard=phpcs-ruleset.xml src/",
+        "lint-src-fix": "phpcbf --standard=phpcs-ruleset.xml src/",
+        "lint-tests": "phpcs --standard=phpcs-ruleset.xml tests/",
+        "lint-tests-fix": "phpcbf --standard=phpcs-ruleset.xml tests/",
+        "analyze": "phan --allow-polyfill-parser",
+        "lint": [
+            "@lint-src",
+            "@lint-tests"
+        ]
+    }
+}
